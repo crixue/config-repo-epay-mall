@@ -1,18 +1,3 @@
-server:
-  port: 9103
-
-eureka:
-  instance:
-    hostname: discovery
-    prefer-ip-address: true
-    metadata-map:
-      user.name: ${security.user.name}
-      user.password: ${security.user.password}
-  client:
-    service-url:
-      defaultZone: http://user:${REGISTRY_SERVER_PASSWORD:password}@discovery:8761/eureka/
-
-
 logging:
   level:
     ROOT: INFO
@@ -33,7 +18,7 @@ zuul:
     category:
       path: /category/**
       sensitiveHeaders:
-        
+
     product:
       path: /product/**
       sensitiveHeaders:
