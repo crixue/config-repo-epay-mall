@@ -1,0 +1,44 @@
+server:
+  port: 9103
+
+eureka:
+  instance:
+    hostname: discovery
+    prefer-ip-address: true
+    metadata-map:
+      user.name: ${security.user.name}
+      user.password: ${security.user.password}
+  client:
+    service-url:
+      defaultZone: http://user:${REGISTRY_SERVER_PASSWORD:password}@discovery:8761/eureka/
+
+
+logging:
+  level:
+    ROOT: INFO
+    org.springframework: INFO
+    java.sql.Connection: DEBUG
+    java.sql.Statement: DEBUG
+    org.apache: INFO
+    o.a.k.clients.consumer: DEBUG
+
+zuul:
+  ignoredServices: '*'  #通过配置此选项，限制不能通过访问服务名去访问微服务
+  add-host-header: true
+  routes:
+    user:
+      path: /user/**
+      sensitiveHeaders:
+
+    category:
+      path: /category/**
+      sensitiveHeaders:
+        
+    product:
+      path: /product/**
+      sensitiveHeaders:
+spring:
+  http:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
