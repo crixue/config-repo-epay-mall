@@ -6,26 +6,6 @@ logging:
     java.sql.Statement: DEBUG
     org.apache: INFO
     o.a.k.clients.consumer: DEBUG
-
-zuul:
-  ignoredServices: '*'  #通过配置此选项，限制不能通过访问服务名去访问微服务
-  add-host-header: true
-  routes:
-    user:
-      path: /user/**
-      sensitiveHeaders:
-
-    category:
-      path: /category/**
-      sensitiveHeaders:
-
-    product:
-      path: /product/**
-      sensitiveHeaders:
-
-    payA:
-      path: /payA/**
-      sensitiveHeaders:
               
 spring:
   http:
