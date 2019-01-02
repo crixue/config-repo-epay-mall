@@ -1,0 +1,7 @@
+eureka:
+  instance:
+    hostname: discovery
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://discovery:8761/eureka/

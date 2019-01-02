@@ -22,6 +22,11 @@ zuul:
     product:
       path: /product/**
       sensitiveHeaders:
+
+    payA:
+      path: /payA/**
+      sensitiveHeaders:
+              
 spring:
   http:
     multipart:
