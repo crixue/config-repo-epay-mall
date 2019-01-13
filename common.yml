@@ -38,3 +38,17 @@ eureka:
   client:
     service-url:
       defaultZone: http://discovery:8761/eureka/
+
+#开启饥饿加载，详见http://blog.didispace.com/spring-cloud-tips-ribbon-eager/?utm_source=tuicool&utm_medium=referral
+ribbon: 
+  eager-load:
+    clients:
+    - micro-epay-mall-order
+    - micro-epay-mall-payA
+    - micro-epay-mall-payB
+    enabled: true
+  #请求处理的超时时间
+  ReadTimeout: 60000 
+  #ribbon请求连接的超时时间 
+  ConnectTimeout: 60000
+  MaxAutoRetries: 1      
