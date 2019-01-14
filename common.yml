@@ -37,7 +37,8 @@ eureka:
     prefer-ip-address: true
   client:
     service-url:
-      defaultZone: http://discovery:8761/eureka/
+      defaultZone: http://discovery:8761/eureka/,http://discovery:8762/eureka/
+      #defaultZone: http://discovery:8761/eureka/
 
 #开启饥饿加载，详见http://blog.didispace.com/spring-cloud-tips-ribbon-eager/?utm_source=tuicool&utm_medium=referral
 ribbon: 
